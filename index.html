@@ -4,15 +4,15 @@
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="canonical" href="https://remainingdaysofpduts.marcreyes.xyz" />
 <meta name="description" content="Remaining Days of PDuts">
-<meta property="og:image" content="https://remainingdaysofpduts.limhenry.xyz/cover.jpg">
+<meta property="og:image" content="https://remainingdaysofpduts.marcreyes.xyz/cover.jpg">
 <meta property="og:title" content="Remaining Days of PDuts" />
 <meta property="og:description" content="Remaining Days of PDuts" />
-<meta property="og:url" content="https://remainingdaysofpduts.limhenry.xyz" />
+<meta property="og:url" content="https://remainingdaysofpduts.marcreyes.xyz" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@marcxplanet" />
 <meta name="twitter:title" content="Remaining Days of PDuts" />
 <meta name="twitter:description" content="Remaining Days of PDuts" />
-<meta name="twitter:image" content="https://remainingdaysofpduts.limhenry.xyz/cover.jpg" />
+<meta name="twitter:image" content="https://remainingdaysofpduts.marcreyes.xyz/cover.jpg" />
 <style>
     * {
         box-sizing: border-box;
@@ -77,7 +77,10 @@
     </div>
 </footer>
 <script>
-    const timestamp = 1607161500000
-    const days = (Date.now() - timestamp) / 86400000
-    document.querySelector('h1 #days').textContent = Math.ceil(days)
+    const startDate = '2021-06-30';
+    const endDate = '2022-06-30';
+
+    const diffInMs = new Date(endDate) - new Date(startDate)
+    const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+    document.querySelector('h1 #days').textContent = diffInDays
 </script>
