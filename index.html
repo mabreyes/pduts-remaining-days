@@ -87,7 +87,7 @@
     if (currentDate.length < 2) {
         currentDate = '0' + currentDate
     }
-    let startDate = currentYear + "-" + currentMonth + "-" + currentDate;
+    const startDate = currentYear + "-" + currentMonth + "-" + currentDate;
     const endDate = '2022-06-30';
 
     const diffInMs = new Date(endDate) - new Date(startDate)
