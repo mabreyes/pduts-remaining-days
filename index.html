@@ -1,0 +1,83 @@
+<meta charset="UTF-8">
+<title>Remaining Days of PDuts &mdash; DEV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="canonical" href="https://remainingdaysofpduts.marcreyes.xyz" />
+<meta name="description" content="Remaining Days of PDuts">
+<meta property="og:image" content="https://remainingdaysofpduts.limhenry.xyz/cover.jpg">
+<meta property="og:title" content="Remaining Days of PDuts" />
+<meta property="og:description" content="Remaining Days of PDuts" />
+<meta property="og:url" content="https://remainingdaysofpduts.limhenry.xyz" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@marcxplanet" />
+<meta name="twitter:title" content="Remaining Days of PDuts" />
+<meta name="twitter:description" content="Remaining Days of PDuts" />
+<meta name="twitter:image" content="https://remainingdaysofpduts.limhenry.xyz/cover.jpg" />
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    html,
+    body {
+        font-family: sans-serif;
+        display: grid;
+        place-items: center;
+        grid-template-rows: 1fr auto;
+        min-height: 100%;
+        margin: 0;
+        text-align: center;
+        padding: 0 16px;
+    }
+    
+    h1 {
+        font-size: 18vw;
+    }
+    
+    footer {
+        opacity: 0.5;
+        padding: 12px 0;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    a {
+        color: inherit;
+        white-space: nowrap;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        html,
+        body {
+            background-color: #202020;
+            color: #fff;
+        }
+    }
+    
+    @media screen and (max-width: 860px) {
+        h1 {
+            font-size: 30vw;
+        }
+        h1 span {
+            display: block;
+        }
+    }
+</style>
+<h1>
+    <span id="days">0</span>
+    <span>days</span>
+</h1>
+<footer>
+    <div>&copy; Copyright 2021 DEV by Marc Reyes</div>
+    <div>
+        <a href="https://github.com/mabreyes/pduts-remaining-days" target="_blank" rel="noopener noreferrer">GitHub</a> &middot;
+        <a href="https://marcrey.es" target="_blank" rel="noopener noreferrer">marcreyes.ph</a> &middot;
+        <a href="https://marcrey.es/status" target="_blank" rel="noopener noreferrer">Status</a> &middot;
+        <a href="https://marcrey.es/dev" target="_blank" rel="noopener noreferrer">DEV</a>
+    </div>
+</footer>
+<script>
+    const timestamp = 1607161500000
+    const days = (Date.now() - timestamp) / 86400000
+    document.querySelector('h1 #days').textContent = Math.ceil(days)
+</script>
