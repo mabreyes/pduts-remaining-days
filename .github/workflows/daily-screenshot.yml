@@ -1,0 +1,6 @@
+- name: Screenshot Website
+  uses: swinton/screenshot-website@v1.x
+  with:
+    source: https://marcreyes.xyz
+    destination: screenshot.png
+    full-page: true
