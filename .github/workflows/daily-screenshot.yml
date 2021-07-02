@@ -1,31 +1,28 @@
 name: Daily Screenshot
 on: [push]
 jobs:
-  screenshot:
-    name: Screenshot
+  screenshots:
     runs-on: ubuntu-latest
     steps:
-      - name: Screenshot Website
-        uses: swinton/screenshot-website@v1.x
-        with:
-          source: https://remainingdaysofpduts.marcreyes.xyz
-          destination: today.png
-          full-page: true
-      - uses: actions/upload-artifact@v2
-        with:
-          path: today.png
-          name: download
-      # - name: Commit file
-      #   uses: swinton/commit@v2.x
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     files: |
-      #       today.png
-      #     commit-message: Committing ./myfile
-      #     ref: refs/heads/main
-      # - name: Commit files
-      #   run: |
-      #     git clone ${{ secrets.PRD_PUSH_CREDS }}
-      #     cd pduts-remaining-days
-      #     ls -la && cd .. && ls -la
+    - uses: actions/checkout@v2
+    - name: install puppeteer-headful
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        CI: 'true'
+    - name: screenshots-ci-action
+      uses: flameddd/screenshots-ci-action@v1.1.1
+      with:
+        url: https://remainingdaysofpduts.marcreyes.xyz
+    - uses: actions/upload-artifact@v2
+      with:
+        path: screenshots
+        name: Download-screenshots
+    - name: Commit file
+      uses: swinton/commit@v2.x
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        files: |
+          screenshots
+        commit-message: Committing ./myfile
+        ref: refs/heads/main
