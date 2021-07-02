@@ -1,25 +1,31 @@
 name: Daily Screenshot
-on:
-  schedule:
-    - cron: 10 0 * * * 
+on: [push]
+  # schedule:
+  #   - cron: 10 0 * * * 
 jobs:
   screenshots:
     runs-on: ubuntu-latest
     steps:
+    - name: Set timezone of runner to Asia/Manila
+      uses: szenius/set-timezone@v1.0
+      with:
+        timezoneLinux: "Asia/Manila"
+        timezoneMacos: "Asia/Manila"
+        timezoneWindows: "Singapore Standard Time"
     - uses: actions/checkout@v2
     - name: Install puppeteer-headful
       uses: mujo-code/puppeteer-headful@master
       env:
         CI: 'true'
-    - name: Screenshot website
+    - name: Screenshot website as of today
       uses: flameddd/screenshots-ci-action@v1.1.1
       with:
         url: https://remainingdaysofpduts.marcreyes.xyz
     - uses: actions/upload-artifact@v2
       with:
         path: screenshots
-        name: Upload artifacts 
-    - name: Prepare file 
+        name: Upload artifacts from runner
+    - name: Prepare screenshots for commit
       run: |
         rm -rf images/today.jpg 
         ls screenshots | grep 'desktopPage1920x1080' | xargs -I{} mv screenshots/{} images/today.jpg
@@ -30,6 +36,6 @@ jobs:
       with:
         files: |
           images/today.jpg
-        commit-message: Committing file 
+        commit-message: Committing new screenshot
         ref: refs/heads/main
 
