@@ -1,4 +1,4 @@
-name: Daily Screenshot
+name: Remaining Days of PDuts 
 on: [push]
   # schedule:
   #   - cron: 10 0 * * * 
