@@ -9,10 +9,12 @@ jobs:
         uses: swinton/screenshot-website@v1.x
         with:
           source: https://remainingdaysofpduts.marcreyes.xyz
-          path: pduts-remaining-days/today.png
+          destination: today.png
           full-page: true
-        run: |
-          ls -la 
+      - uses: actions/upload-artifact@v2
+        with:
+          path: today.png
+          name: download
       # - name: Commit file
       #   uses: swinton/commit@v2.x
       #   env:
