@@ -1,7 +1,7 @@
 # ⌛ Remaining Days of PDuts ⤵️
 This magically updates everyday. Visit this repo everyday and see for yourself (✌️ just kidding, this is powered by [GitHub Actions](https://github.com/features/actions)).
 
-![How many days since Henry got his haircut?](images/today.jpg)
+![⌛ Remaining Days of PDuts](images/today.jpg)
 
 ## Setup
 1. Install and use the required version of Ruby on your machine with [RVM](https://rvm.io/).
