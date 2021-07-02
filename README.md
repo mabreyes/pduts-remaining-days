@@ -1,1 +1,1 @@
-![How many days since Henry got his haircut?](images/today.png)
+![How many days since Henry got his haircut?](images/today.jpg)

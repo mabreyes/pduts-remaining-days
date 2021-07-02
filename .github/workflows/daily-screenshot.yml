@@ -5,21 +5,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: install puppeteer-headful
+    - name: Install puppeteer-headful
       uses: mujo-code/puppeteer-headful@master
       env:
         CI: 'true'
-    - name: screenshots-ci-action
+    - name: Screenshot website
       uses: flameddd/screenshots-ci-action@v1.1.1
       with:
         url: https://remainingdaysofpduts.marcreyes.xyz
     - uses: actions/upload-artifact@v2
       with:
         path: screenshots
-        name: Download-screenshots
-    - name: Rename file 
+        name: Upload artifacts 
+    - name: Prepare file 
       run: |
-        mkdir images 
+        rm -rf images/today.jpg 
         ls screenshots | grep 'desktopPage1920x1080' | xargs -I{} mv screenshots/{} images/today.jpg
     - name: Commit file
       uses: swinton/commit@v2.x
