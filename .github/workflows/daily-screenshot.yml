@@ -19,14 +19,15 @@ jobs:
         name: Download-screenshots
     - name: Rename file 
       run: |
-        ls screenshots | grep 'desktopPage1920x1080' | xargs -I{} mv screenshots/{} screenshots/today.jpg
+        mkdir images 
+        ls screenshots | grep 'desktopPage1920x1080' | xargs -I{} mv screenshots/{} images/today.jpg
     - name: Commit file
       uses: swinton/commit@v2.x
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         files: |
-          screenshots/today.jpg
+          images/today.jpg
         commit-message: Committing file 
         ref: refs/heads/main
 
