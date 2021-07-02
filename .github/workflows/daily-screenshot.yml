@@ -9,4 +9,15 @@ jobs:
         uses: swinton/screenshot-website@v1.x
         with:
           source: https://remainingdaysofpduts.marcreyes.xyz
-          destination: images/today.png
+          destination: today.png
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add today.png 
+          git commit -m "Add changes" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PRD_PUSH_TOKEN }}
+          branch: ${{ github.ref }}
