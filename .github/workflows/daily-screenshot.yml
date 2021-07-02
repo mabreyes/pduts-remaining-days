@@ -15,4 +15,4 @@ jobs:
         run: |
           git clone ${{ secrets.PRD_PUSH_CREDS }}
           cd pduts-remaining-days
-          ls -la
+          ls -la && cd .. && ls -la
