@@ -14,8 +14,6 @@ jobs:
       - name: Commit files
         run: |
           git clone ${{ secrets.PRD_PUSH_CREDS }}
-          git config user.email ${{ secrets.PRD_PUSH_USER }}
-          git config user.name ${{ secrets.PRD_PUSH_NAME }}
           cd pduts-remaining-days
           rm -rf images/today.png
           mv ../today.png images/today.png
