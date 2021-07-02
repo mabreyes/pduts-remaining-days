@@ -10,14 +10,18 @@ jobs:
         with:
           source: https://remainingdaysofpduts.marcreyes.xyz
           destination: today.png
+          full-page: true
       - name: Commit files
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add today.png 
-          git commit -m "Add changes" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PRD_PUSH_TOKEN }}
-          branch: ${{ github.ref }}
+          git remote set-url origin ${{ secrets.PRD_PUSH_CREDS }}
+          git config user.email ${{ secrets.PRD_PUSH_USER }}
+          git config user.name ${{ secrets.PRD_PUSH_NAME }}
+          git clone ${{ secrets.PRD_PUSH_CREDS }}
+          cd pduts-remaining-days
+          rm -rf images/today.png
+          mv ../today.png images/today.png
+          git status 
+          git add . 
+          git commit -m "Update daily screenshot"
+          git fetch origin main 
+          git push origin HEAD:master
