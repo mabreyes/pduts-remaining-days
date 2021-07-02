@@ -6,36 +6,36 @@ jobs:
   screenshots:
     runs-on: ubuntu-latest
     steps:
-    - name: Set timezone of runner to Asia/Manila
+    - name: ⏰ Set timezone of runner to Asia/Manila
       uses: szenius/set-timezone@v1.0
       with:
         timezoneLinux: "Asia/Manila"
         timezoneMacos: "Asia/Manila"
         timezoneWindows: "Manila Standard Time"
     - uses: actions/checkout@v2
-    - name: Install puppeteer-headful
+    - name: 🛠️ Install puppeteer-headful
       uses: mujo-code/puppeteer-headful@master
       env:
         CI: 'true'
-    - name: Screenshot website as of today
+    - name: ⚙️ Generate image of PDuts's remaining days as of today
       uses: flameddd/screenshots-ci-action@v1.1.1
       with:
         url: https://remainingdaysofpduts.marcreyes.xyz
     - uses: actions/upload-artifact@v2
       with:
         path: screenshots
-        name: Upload artifacts from runner
-    - name: Prepare screenshots for commit
+        name: ⬆️ Uploading artifacts from runner to staging
+    - name: 📁 Prepare screenshots for commit
       run: |
         rm -rf images/today.jpg 
         ls screenshots | grep 'desktopPage1920x1080' | xargs -I{} mv screenshots/{} images/today.jpg
-    - name: Committing new screenshot
+    - name: ⌛ Remaining days of PDuts as of today 
       uses: swinton/commit@v2.x
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         files: |
           images/today.jpg
-        commit-message: Committing new screenshot
+        commit-message: ⌛ Remaining days of PDuts as of today
         ref: refs/heads/main
 
