@@ -17,6 +17,16 @@ jobs:
       with:
         path: screenshots
         name: Download-screenshots
-    - name: Commit file
+    - name: Rename file 
       run: |
-        ls screenshots
+        mv screenshots/desktopPage1920x1080-1a6d7bb.jpeg screenshots/today.jpg
+    - name: Commit file
+      uses: swinton/commit@v2.x
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        files: |
+          screenshots/today.jpg
+        commit-message: Committing file 
+        ref: refs/heads/main
+
