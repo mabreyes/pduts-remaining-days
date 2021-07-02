@@ -11,15 +11,17 @@ jobs:
           source: https://remainingdaysofpduts.marcreyes.xyz
           path: pduts-remaining-days/today.png
           full-page: true
-      - name: Commit file
-        uses: swinton/commit@v2.x
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          files: |
-            today.png
-          commit-message: Committing ./myfile
-          ref: refs/heads/main
+        run: |
+          ls -la 
+      # - name: Commit file
+      #   uses: swinton/commit@v2.x
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     files: |
+      #       today.png
+      #     commit-message: Committing ./myfile
+      #     ref: refs/heads/main
       # - name: Commit files
       #   run: |
       #     git clone ${{ secrets.PRD_PUSH_CREDS }}
