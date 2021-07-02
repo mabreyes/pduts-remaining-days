@@ -3,7 +3,7 @@ on: [push]
   # schedule:
   #   - cron: 10 0 * * * 
 jobs:
-  screenshots:
+  remaining-days-of-pduts:
     runs-on: ubuntu-latest
     steps:
     - name: ⏰ Set timezone of runner to Asia/Manila
