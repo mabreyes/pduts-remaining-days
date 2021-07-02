@@ -13,7 +13,6 @@ jobs:
           full-page: true
       - name: Commit files
         run: |
-          # git remote set-url origin ${{ secrets.PRD_PUSH_CREDS }}
           git config user.email ${{ secrets.PRD_PUSH_USER }}
           git config user.name ${{ secrets.PRD_PUSH_NAME }}
           git clone ${{ secrets.PRD_PUSH_CREDS }}
