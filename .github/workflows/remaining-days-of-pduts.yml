@@ -1,7 +1,7 @@
 name: Remaining Days of PDuts 
 on:
   schedule:
-    - cron: '50 16 * * *'
+    - cron: "0 0 * * *"
 jobs:
   remaining-days-of-pduts:
     runs-on: ubuntu-latest
