@@ -19,7 +19,7 @@ jobs:
         name: Download-screenshots
     - name: Rename file 
       run: |
-        ls screenshots | grep 'desktopPage1920x1080' | xargs -I{} mv {} screenshots/today.jpg
+        ls screenshots | grep 'desktopPage1920x1080' | xargs -I{} mv screenshots/{} screenshots/today.jpg
     - name: Commit file
       uses: swinton/commit@v2.x
       env:
