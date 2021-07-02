@@ -1,3 +1,5 @@
+name: Daily Screenshot
+on: [push]
 jobs:
   screenshot:
     name: Screenshot
