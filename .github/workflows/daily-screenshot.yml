@@ -19,4 +19,4 @@ jobs:
         name: Download-screenshots
     - name: Commit file
       run: |
-        ls  
+        ls screenshots
