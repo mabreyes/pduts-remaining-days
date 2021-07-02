@@ -19,8 +19,7 @@ jobs:
         name: Download-screenshots
     - name: Rename file 
       run: |
-        mv screenshots/desktopPage1920x1080-1a6d7bb.jpeg screenshots/today.jpg
-    - name: Commit file
+        ls screenshots | grep 'desktopPage1920x1080' | xargs -I{} mv {} screenshots/today.jpg
       uses: swinton/commit@v2.x
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
