@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: #324ab2;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr auto;
+    min-height: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 0 16px;
+}
+
+h1 {
+    font-size: 18vw;
+    font-weight: 900;
+    letter-spacing: -5px;
+}
+
+footer {
+    opacity: 0.5;
+    padding: 12px 0;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+a {
+    color: inherit;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 860px) {
+    h1 {
+        font-size: 30vw;
+    }
+    h1 span {
+        display: block;
+    }
+}
