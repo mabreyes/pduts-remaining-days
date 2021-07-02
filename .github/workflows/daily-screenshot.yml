@@ -11,7 +11,7 @@ jobs:
       with:
         timezoneLinux: "Asia/Manila"
         timezoneMacos: "Asia/Manila"
-        timezoneWindows: "Singapore Standard Time"
+        timezoneWindows: "Manila Standard Time"
     - uses: actions/checkout@v2
     - name: Install puppeteer-headful
       uses: mujo-code/puppeteer-headful@master
@@ -29,7 +29,7 @@ jobs:
       run: |
         rm -rf images/today.jpg 
         ls screenshots | grep 'desktopPage1920x1080' | xargs -I{} mv screenshots/{} images/today.jpg
-    - name: Commit file
+    - name: Committing new screenshot
       uses: swinton/commit@v2.x
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
