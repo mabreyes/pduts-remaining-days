@@ -1,5 +1,5 @@
 ---
-title: Remaining Days of PDuts (as the President)
+title: Remaining Days of PDuts's Presidency
 description: "Let's count Pduts's remaining days as President, together."
 layout: default
 ---
