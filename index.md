@@ -1,6 +1,6 @@
 ---
-title: Remaining Days of PDuts
-description: "Let's count Pduts's remaining days together"
+title: Remaining Days of PDuts (as the President)
+description: "Let's count Pduts's remaining days as President, together."
 layout: default
 ---
 <h1>

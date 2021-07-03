@@ -1,7 +1,7 @@
-# ⌛ Remaining Days of PDuts ⤵️
+# ⌛ Remaining Days of PDuts (as the President) ⤵️
 This magically updates everyday. Visit this repo everyday and see for yourself (✌️ just kidding, this is powered by [GitHub Actions](https://github.com/features/actions)).
 
-![⌛ Remaining Days of PDuts](images/today.jpg)
+![⌛ Remaining Days of PDuts (as the President)](images/today.jpg)
 
 ## Setup
 1. Install and use the required version of Ruby on your machine with [RVM](https://rvm.io/).

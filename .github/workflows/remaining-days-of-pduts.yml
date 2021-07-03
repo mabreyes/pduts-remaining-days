@@ -1,4 +1,4 @@
-name: Remaining Days of PDuts 
+name: Remaining Days of PDuts (as the President) 
 on:
   schedule:
     - cron: "0 0 * * *"
@@ -29,13 +29,13 @@ jobs:
       run: |
         rm -rf images/today.jpg 
         ls screenshots | grep 'desktopPage1920x1080' | xargs -I{} mv screenshots/{} images/today.jpg
-    - name: ⌛ Remaining days of PDuts as of today 
+    - name: ⌛ Remaining Days of PDuts (as the President) as of today 
       uses: swinton/commit@v2.x
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         files: |
           images/today.jpg
-        commit-message: ⌛ Remaining days of PDuts as of today
+        commit-message: ⌛ Remaining Days of PDuts (as the President) as of today
         ref: refs/heads/main
 
