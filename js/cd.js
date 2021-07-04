@@ -12,3 +12,4 @@ const endDate = '2022-06-30'
 const diffInMs = new Date(endDate) - new Date(startDate)
 const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
 document.querySelector('h1 #days').textContent = Math.ceil(diffInDays)
+window.history.replaceState(null, null, "?refresh=True&days=" + Math.ceil(diffInDays))
