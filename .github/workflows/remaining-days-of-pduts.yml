@@ -1,7 +1,7 @@
 name: Remaining Days of PDuts's Presidency 
-on:
-  schedule:
-    - cron: "0 0 * * *"
+# on: [push]
+#   schedule:
+#     - cron: "0 0 * * *"
 jobs:
   remaining-days-of-pduts:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
     - name: ⚙️ Generate image of PDuts's remaining days as of today
       uses: flameddd/screenshots-ci-action@v1.1.1
       with:
-        url: https://remainingdaysofpduts.marcreyes.xyz
+        url: https://remainingdaysofpduts.marcreyes.xyz/generate
     - uses: actions/upload-artifact@v2
       with:
         path: screenshots

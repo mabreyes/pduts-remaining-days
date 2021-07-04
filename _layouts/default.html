@@ -11,7 +11,10 @@ layout: compress
 
 <body oncontextmenu="return false" onselectstart="return false">
     {{ content }}
+    {% if page.footer == true %} 
     {% include footer.html %}
+    {% else %}
+    {% endif %}
     <script src="{{ 'js/cd.js' }}"></script>
 </body>
 
