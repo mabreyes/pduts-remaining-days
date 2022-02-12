@@ -1,7 +1,7 @@
 name: Remaining Days of PDuts's Presidency 
 on:
   schedule:
-    - cron: "0 14 * * *"
+    - cron: "0 16 * * *"
 jobs:
   remaining-days-of-pduts:
     runs-on: ubuntu-latest
