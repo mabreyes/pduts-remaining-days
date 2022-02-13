@@ -19,5 +19,5 @@ if (diffInDays <= 1) {
     document.querySelector('h1 #count-plural-day').textContent = 'day.'
 } else {
     document.querySelector('h1 #count-plural-verb').textContent = 'There are'
-    document.querySelector('h1 #count').textContent = 'days.'
+    document.querySelector('h1 #count-plural-day').textContent = 'days.'
 }
