@@ -13,3 +13,11 @@ const diffInMs = new Date(endDate) - new Date(startDate)
 const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
 document.querySelector('h1 #days').textContent = Math.ceil(diffInDays)
 window.history.replaceState(null, null, "?refresh=True&days=" + Math.ceil(diffInDays))
+
+if (diffInDays <= 1) {
+    document.querySelector('h1 #count-plural-verb').textContent = 'There is'
+    document.querySelector('h1 #count-plural-day').textContent = 'day.'
+} else {
+    document.querySelector('h1 #count-plural-verb').textContent = 'There are'
+    document.querySelector('h1 #count').textContent = 'days.'
+}
