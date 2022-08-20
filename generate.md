@@ -5,7 +5,9 @@ layout: default
 footer: false
 ---
 <h1>
-    <span id="count-plural-verb">There are</span>
+    <span>There are</span>
+    <!-- <span id="count-plural-verb">There are</span> -->
     <span id="days">0</span>
-    <span id="count-plural-day">days.</span>
+    <span>since the new PH president</span>
+    <!-- <span id="count-plural-day">days.</span> -->
 </h1>
