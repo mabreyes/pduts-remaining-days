@@ -8,6 +8,6 @@ footer: true
     <span>There are</span>
     <!-- <span id="count-plural-verb">There are</span> -->
     <span id="days">0</span>
-    <span>since the new PH president</span>
+    <span>days</span>
     <!-- <span id="count-plural-day">days.</span> -->
 </h1>
