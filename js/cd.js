@@ -14,11 +14,21 @@
 // document.querySelector('h1 #days').textContent = Math.ceil(diffInDays)
 // window.history.replaceState(null, null, "?refresh=True&days=" + Math.ceil(diffInDays))
 
-const timestamp = 1656518400 // 06.30.2022
-const days = Math.ceil((Date.now() - timestamp) / 86400000)
-document.querySelector('h1 #days').textContent = days
-if (days <= 1) document.querySelector('h1 #unit').textContent = "day"
 
+function getDateXDaysAgo(numOfDays, date = new Date()) {
+    const daysAgo = new Date(date.getTime());
+  
+    daysAgo.setDate(date.getDate() - numOfDays);
+  
+    return daysAgo;
+  }
+  
+  const date = new Date('2022-06-30');
+  
+  // 👇️ Fri Dec 31 2021
+  console.log(getDateXDaysAgo(17, date));
+  
+  document.querySelector('h1 #days').textContent = days
 
 // if (diffInDays <= 1) {
 //     document.querySelector('h1 #count-plural-verb').textContent = 'There is'

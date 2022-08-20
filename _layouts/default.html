@@ -15,7 +15,11 @@ layout: compress
     {% include footer.html %}
     {% else %}
     {% endif %}
-    <script src="{{ 'js/cd.js' }}"></script>
+    <script src="https://cdnjs.com/libraries/moment.js"></script>
+    <script>
+        var days = moment().diff("2022-06-30", "days");
+        document.querySelector('h1 #days').textContent = days
+    </script>
 </body>
 
 </html>
